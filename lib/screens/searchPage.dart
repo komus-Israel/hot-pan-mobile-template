@@ -25,8 +25,13 @@ class _SearchPageState extends State<SearchPage> {
           child: TextFormField(
             decoration: InputDecoration(
               focusedBorder: UnderlineInputBorder(),
+              hintText: 'Efo Riro',
+              hintStyle: TextStyle(
+                color: Colors.black12
+              )
             ),
             cursorColor: Colors.deepPurple,
+
 
 
           )
