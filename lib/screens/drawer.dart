@@ -14,6 +14,7 @@ class AppDrawer extends StatefulWidget {
 class _AppDrawerState extends State<AppDrawer> {
 
   List<Map> drawerComponents;
+  String version;
 
   @override
   void initState() {
@@ -41,6 +42,8 @@ class _AppDrawerState extends State<AppDrawer> {
           Icons.login
       ), 'routeName': '/signIn'},
     ];
+
+    version = '1.0';
 
   }
 
@@ -95,7 +98,7 @@ class _AppDrawerState extends State<AppDrawer> {
             child: Container(
               margin: EdgeInsets.fromLTRB(10, 0, 0, 10),
               child: Text(
-                  'v1.0',
+                  'v'+version,
                 style: TextStyle(
                   fontWeight: FontWeight.bold
                 ),
