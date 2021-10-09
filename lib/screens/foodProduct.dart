@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:hot_pan/components/customClasses.dart';
 
 
-class FoodProducts extends StatelessWidget {
+class FoodProducts extends StatefulWidget {
 
+  @override
+  _FoodProductsState createState() => _FoodProductsState();
+}
+
+class _FoodProductsState extends State<FoodProducts> {
   List<Map> foodProducts= [
       {'name': 'chicken stew', 'image': 'assets/images/img1.jpg', 'price': '2000', 'averageRating': '3.5'},
       {'name': 'assorted okra', 'image': 'assets/images/img2.jpg', 'price': '2000', 'averageRating': '3.5'},
