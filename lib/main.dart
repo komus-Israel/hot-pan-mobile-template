@@ -6,6 +6,8 @@ import 'screens/signin.dart';
 import 'screens/signup.dart';
 import 'screens/searchPage.dart';
 import 'components/tabview_component.dart';
+import 'screens/transaction.dart';
+import 'screens/transaction_receipt.dart';
 void main() {
 
   runApp(HotPan());
@@ -26,7 +28,9 @@ class _HotPanState extends State<HotPan> {
         '/signIn': (context)=>SignIn(),
         '/signUp':(context)=>SignUp(),
         '/tabView':(context)=>TabComponent(),
-        '/search':(context)=>SearchPage()
+        '/search':(context)=>SearchPage(),
+        '/log':(context)=>TransactionLog(),
+        '/receipt':(context)=>TransactionReceipt()
 
       },
       home: Scaffold(

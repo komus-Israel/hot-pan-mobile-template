@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import '../routes/routes.dart';
+import 'transaction_receipt.dart';
 
 
 class AccountPage extends StatefulWidget {
@@ -41,30 +43,35 @@ class _AccountPageState extends State<AccountPage> {
             child: Column(
                 children: [
                   Container(
-                    height: MediaQuery.of(context).size.height * 0.20,
+
+                    height: MediaQuery.of(context).size.height * 0.25,
                     margin: EdgeInsets.fromLTRB(15, 10, 20, 0),
                     width: MediaQuery.of(context).size.width,
                       child: Column(
                         //mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children:[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children:[
-                              Text(
-                                profileAccount['name'],
-                                style: TextStyle(
-                                    fontSize: MediaQuery.of(context).size.height * 0.035,
-                                    color: Color.fromRGBO(80,62,157,1),
-                                    fontWeight: FontWeight.bold
+                          Container(
+                            margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children:[
+                                Text(
+                                  profileAccount['name'],
+                                  style: TextStyle(
+                                      fontSize: MediaQuery.of(context).size.height * 0.035,
+                                      color: Color.fromRGBO(80,62,157,1),
+                                      fontWeight: FontWeight.bold
+                                  ),
                                 ),
-                              ),
-                              Icon(
-                                Icons.stars_sharp,
-                                size: MediaQuery.of(context).size.height * 0.055,
-                                color: Colors.amber[200],
-                              )
-                            ]
+                                Icon(
+                                  Icons.stars_sharp,
+                                  size: MediaQuery.of(context).size.height * 0.055,
+                                  color: Colors.amber[200],
+                                )
+                              ]
+                            ),
                           ),
                           SizedBox(height: 10,),
                           Row(
@@ -99,7 +106,7 @@ class _AccountPageState extends State<AccountPage> {
                         margin: EdgeInsets.fromLTRB(30, 100, 30, 0),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                            Container(
                              height:70,
@@ -158,18 +165,36 @@ class _AccountPageState extends State<AccountPage> {
                              ),
 
                             Container(
-                              margin: EdgeInsets.fromLTRB(0, 0, 0, 50),
+                              margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                      'Transactions',
-                                    style: TextStyle(
-                                      fontSize: MediaQuery.of(context).size.height * 0.030,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white60
-                                    ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Transactions',
+                                        style: TextStyle(
+                                            fontSize: MediaQuery.of(context).size.height * 0.025,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white60
+                                        ),
+                                      ),
+
+                                      TextButton(
+                                        child: Text(
+                                            'View All',
+                                          style: TextStyle(
+                                            fontSize: MediaQuery.of(context).size.height * 0.020,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white60
+                                      ),
+                                        ),
+
+                                      ),
+                                    ],
                                   ),
+
 
                                   Container(
                                     decoration: BoxDecoration(
@@ -183,7 +208,10 @@ class _AccountPageState extends State<AccountPage> {
                                       child: ListView.builder(
                                         itemCount: transactions.length,
                                         itemBuilder: (context, index)=>ElevatedButton(
-                                              onPressed: ()=>print('pressed'),
+                                              //onPressed: ()=>namedPageRoute(context,'/receipt',{}),
+                                          onPressed: ()=>showDialog(
+                                              context:context,
+                                              builder:(context)=>TransactionReceipt()),
                                               style: ButtonStyle(
                                                 elevation: MaterialStateProperty.resolveWith((states) => 0),
                                                 backgroundColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
@@ -193,7 +221,7 @@ class _AccountPageState extends State<AccountPage> {
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    transactions[index]['foodPurchased'],
+                                                    transactions[index]['foodPurchased'].length > 5 ? transactions[index]['foodPurchased'].substring(0,7) + ' ...' : transactions[index]['foodPurchased'],
                                                     style: TextStyle(
                                                       fontWeight: FontWeight.bold,
                                                       fontSize: 15,
