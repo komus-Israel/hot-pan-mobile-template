@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:open_file/open_file.dart';
-import 'package:path_provider/path_provider.dart';
+//import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 import '../routes/routes.dart';
 import 'dart:async';
@@ -17,7 +17,7 @@ class TabRouteObject{
   TabRouteObject({this.tabName, this.tabPage, this.tabIcon});
 }
 
-Widget Price(Widget widget, packageName, price){
+Widget price(Widget widget, packageName, price){
   return Container(
     margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
     child: Row(
@@ -42,7 +42,7 @@ Widget Price(Widget widget, packageName, price){
   );
 }
 
-class buildForm extends StatefulWidget {
+class BuildForm extends StatefulWidget {
 
   Size size;
   String hint = 'Category';
@@ -54,12 +54,12 @@ class buildForm extends StatefulWidget {
 
 
 
-  buildForm({Key key, this.size, this.hint,  this.inputType,  this.prefixIcon,  this.suffixIcon:false,  this.obscure:false, this.onSaved}) : super(key: key);
+  BuildForm({Key key, this.size, this.hint,  this.inputType,  this.prefixIcon,  this.suffixIcon:false,  this.obscure:false, this.onSaved}) : super(key: key);
   @override
-  _buildFormState createState() => _buildFormState();
+  _BuildFormState createState() => _BuildFormState();
 }
 
-class _buildFormState extends State<buildForm> {
+class _BuildFormState extends State<BuildForm> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -302,7 +302,7 @@ class ReceiptStatementContainer extends StatelessWidget {
   }
 }
 
-Future<void> createPDF() async{
+/*Future<void> createPDF() async{
   PdfDocument document = PdfDocument();
   document.pages.add();
 
@@ -317,5 +317,5 @@ Future<void> saveAndLaunchFile(List<int> bytes, String fileName) async{
   final file = File('$path/$fileName');
   await file.writeAsBytes(bytes, flush: true);
   OpenFile.open('$path/$fileName');
-}
+}*/
 

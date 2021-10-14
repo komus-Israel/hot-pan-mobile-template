@@ -217,7 +217,7 @@ class _AccountPageState extends State<AccountPage> {
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    transactions[index]['foodPurchased'].length > 5 ? transactions[index]['foodPurchased'].substring(0,7) + ' ...' : transactions[index]['foodPurchased'],
+                                                    transactions[index]['foodPurchased'].length > 5 ? transactions[index]['foodPurchased'].substring(0,6) + ' ...' : transactions[index]['foodPurchased'],
                                                     style: TextStyle(
                                                       fontWeight: FontWeight.bold,
                                                       fontSize: 15,

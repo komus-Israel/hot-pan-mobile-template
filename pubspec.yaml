@@ -33,7 +33,6 @@ dependencies:
   flutter_svg: ^0.18.1
   shape_of_view:
   flutter_native_splash: ^0.2.8
-  path_provider:
   syncfusion_flutter_pdf: ^18.4.47-beta
   open_file: ^3.1.0
 

@@ -112,7 +112,7 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
                           margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
                           child: Column(
                             children: <Widget>[
-                              Price(
+                              price(
                                   Container(
                                     width: 100,
                                     height: 100,
@@ -126,7 +126,7 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
                                     ),
                                   ),
                                   _quantity.toString() + ' x ' + orderedFoodDetails['name'], 'N' + orderedFoodDetails['price']),
-                              Price(
+                              price(
                                   Container(
 
                                     width: 100,

@@ -37,7 +37,7 @@ class _HotPanState extends State<HotPan> {
         body: TabComponent()
       ),
       theme: ThemeData(
-        primaryColor: Colors.white
+        primaryColor: Colors.white,
       ),
       
 

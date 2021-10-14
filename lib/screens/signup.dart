@@ -32,12 +32,12 @@ class _SignUpState extends State<SignUp> {
                   children: [
                     Column(
                     children: [
-                      buildForm(size: size, hint: 'First Name', prefixIcon:Icon(Icons.person_outlined, color: Colors.white,)),
-                      buildForm(size: size, hint: 'Last Name', prefixIcon:Icon(Icons.person_outlined, color: Colors.white,)),
-                      buildForm(size: size, hint: 'Email', prefixIcon:Icon(Icons.mail_outline, color: Colors.white,)),
-                      buildForm(size: size, hint: 'Phone', prefixIcon:Icon(Icons.phone, color: Colors.white,)),
-                      buildForm(size: size, hint: 'Password', prefixIcon:Icon(Icons.lock_outline, color: Colors.white,), suffixIcon:true, obscure: true,),
-                      buildForm(size: size, hint: 'Confirm Password', prefixIcon:Icon(Icons.lock, color: Colors.white,), suffixIcon:true, obscure: true),
+                      BuildForm(size: size, hint: 'First Name', prefixIcon:Icon(Icons.person_outlined, color: Colors.white,)),
+                      BuildForm(size: size, hint: 'Last Name', prefixIcon:Icon(Icons.person_outlined, color: Colors.white,)),
+                      BuildForm(size: size, hint: 'Email', prefixIcon:Icon(Icons.mail_outline, color: Colors.white,)),
+                      BuildForm(size: size, hint: 'Phone', prefixIcon:Icon(Icons.phone, color: Colors.white,)),
+                      BuildForm(size: size, hint: 'Password', prefixIcon:Icon(Icons.lock_outline, color: Colors.white,), suffixIcon:true, obscure: true,),
+                      BuildForm(size: size, hint: 'Confirm Password', prefixIcon:Icon(Icons.lock, color: Colors.white,), suffixIcon:true, obscure: true),
                     ],
                   ),
 

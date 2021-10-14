@@ -140,14 +140,14 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin{
                                         mainAxisAlignment: MainAxisAlignment
                                             .spaceEvenly,
                                         children: [
-                                          buildForm(size: size,
+                                          BuildForm(size: size,
                                             hint: 'Email',
                                             prefixIcon: Icon(Icons.mail_outline,
                                               color: Colors.white
                                             ),
                                             onSaved: (value)=>username=value,
                                           ),
-                                          buildForm(size: size,
+                                          BuildForm(size: size,
                                               hint: 'Password',
                                               prefixIcon: Icon(
                                                 Icons.lock, color: Colors.white,),

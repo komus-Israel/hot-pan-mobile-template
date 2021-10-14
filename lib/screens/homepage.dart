@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
   void initState(){
     super.initState();
     selected = foodCategories[0];
+
   }
 
   Widget build(BuildContext context) {

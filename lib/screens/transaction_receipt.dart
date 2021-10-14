@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:path_provider/path_provider.dart';
+//import 'package:path_provider/path_provider.dart';
 import 'package:shape_of_view/shape/arc.dart';
 import 'package:shape_of_view/shape_of_view.dart';
 import '../components/customClasses.dart';
@@ -37,8 +37,8 @@ class _TransactionReceiptState extends State<TransactionReceipt> {
     print(pngBytes);
     return pngBytes;*/
 
-    String dir = (await getApplicationDocumentsDirectory()).path;
-    print(dir);
+    //String dir = (await getApplicationDocumentsDirectory()).path;
+    //print(dir);
   }
   @override
  Widget build(BuildContext context) {

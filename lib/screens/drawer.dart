@@ -32,11 +32,7 @@ class _AppDrawerState extends State<AppDrawer> {
 
       {'name':'Transactions', 'icon':Icon(
           Icons.monetization_on_outlined
-      ), 'routeName': '/accountPage'},
-
-      {'name':'Privacy', 'icon':Icon(
-          Icons.policy
-      ), 'routeName': '/accountPage'},
+      ), 'routeName': '/log'},
 
       {'name': widget.signedIn ? 'Sign Out' : 'Sign In', 'icon':Icon(
           Icons.login
