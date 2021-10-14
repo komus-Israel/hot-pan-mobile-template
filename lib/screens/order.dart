@@ -61,7 +61,7 @@ class _FoodOrderPageState extends State<FoodOrderPage> {
                           child: Card(
                             margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
                             elevation: 0,
-                            color: Color.fromRGBO(80, 62, 157, 1),
+                            color: Color.fromRGBO(35, 24, 75, 1.0),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.all(Radius.circular(20))
                             ),

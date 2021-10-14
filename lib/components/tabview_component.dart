@@ -121,10 +121,10 @@ class _TabComponentState extends State<TabComponent> with SingleTickerProviderSt
                       ],
                     )
                   )).toList(),
-                  indicatorColor: Color.fromRGBO(80,62,157,1),
+                  indicatorColor: Color.fromRGBO(35, 24, 75, 1.0),
                   labelPadding: EdgeInsets.all(10),
                   unselectedLabelColor: Colors.black38,
-                  labelColor: Color.fromRGBO(80,62,157,1),
+                  labelColor: Color.fromRGBO(35, 24, 75, 1.0),
 
                   /*test.map((object)=>Tab(
                       child: Text(object['name']))

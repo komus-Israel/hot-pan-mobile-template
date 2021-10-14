@@ -66,9 +66,9 @@ class _AccountPageState extends State<AccountPage> {
                                   ),
                                 ),
                                 Icon(
-                                  Icons.stars_sharp,
+                                  Icons.celebration,
                                   size: MediaQuery.of(context).size.height * 0.055,
-                                  color: Colors.amber[200],
+                                  color: Colors.amber,
                                 )
                               ]
                             ),
@@ -106,7 +106,7 @@ class _AccountPageState extends State<AccountPage> {
                         margin: EdgeInsets.fromLTRB(30, 100, 30, 0),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                            Container(
                              height:70,
@@ -134,15 +134,13 @@ class _AccountPageState extends State<AccountPage> {
                                                      child: Text(
                                                        option['number'],
                                                        style: TextStyle(
-                                                           color: Colors.amber,
+                                                           color: Colors.grey,
                                                          fontStyle:FontStyle.italic,
                                                          fontWeight: FontWeight.bold,
                                                        ),
                                                      ),
                                                    ),
                                                  ),
-
-
                                                ]
                                            ),
                                          Container(
@@ -150,10 +148,8 @@ class _AccountPageState extends State<AccountPage> {
                                            child: Text(
                                              option['name'],
                                              style: TextStyle(
-                                                 color: Colors.amber[300],
+                                                 color: Colors.grey,
                                                fontWeight: FontWeight.bold,
-
-
                                              ),
                                            ),
                                          )
@@ -225,21 +221,30 @@ class _AccountPageState extends State<AccountPage> {
                                                     style: TextStyle(
                                                       fontWeight: FontWeight.bold,
                                                       fontSize: 15,
-                                                      color: Color.fromRGBO(
-                                                          164, 146, 245, 1.0),
+                                                      color: Colors.white,
                                                     ),
                                                   ),
                                                   Column(
                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
-                                                      Text('Reference Number'),
-                                                      Text(transactions[index]['ref']),
+                                                      Text(
+                                                          'Reference Number',
+                                                        style: TextStyle(
+                                                          color: Colors.grey
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                          transactions[index]['ref'],
+                                                        style: TextStyle(
+                                                          color: Colors.grey
+                                                        ),
+                                                      ),
                                                     ],
                                                   ),
                                                   Text(
                                                       'N '+ transactions[index]['amount'],
                                                     style: TextStyle(
-                                                      color: Colors.amber,
+                                                      color: Colors.amber[200],
                                                       fontStyle: FontStyle.italic
                                                     ),
                                                   ),

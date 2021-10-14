@@ -1,6 +1,12 @@
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:open_file/open_file.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:syncfusion_flutter_pdf/pdf.dart';
 import '../routes/routes.dart';
+import 'dart:async';
+
 
 class TabRouteObject{
 
@@ -229,7 +235,7 @@ class _FoodCardState extends State<FoodCard> {
                            child: Text('Order'),
                           style: ButtonStyle(
                           foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                           backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple),
+                           backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(35, 24, 75, 1.0)),
                       ),
                   )
                   ]
@@ -260,3 +266,56 @@ class _FoodCardState extends State<FoodCard> {
                     );
   }
 }
+
+class ReceiptStatementContainer extends StatelessWidget {
+
+  final statement;
+  final statementHeader;
+  ReceiptStatementContainer({Key key, this.statement, this.statementHeader}): super(key:key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 3, 0, 0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+              statementHeader+':',
+            style: TextStyle(
+              fontWeight: FontWeight.bold
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width/2,
+            child: Text(
+              statement,
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                color: Colors.black54
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+Future<void> createPDF() async{
+  PdfDocument document = PdfDocument();
+  document.pages.add();
+
+  List<int> bytes = document.save();
+  document.dispose();
+
+  saveAndLaunchFile(bytes, 'Output.pdf');
+}
+
+Future<void> saveAndLaunchFile(List<int> bytes, String fileName) async{
+  final path = (await getExternalStorageDirectory()).path;
+  final file = File('$path/$fileName');
+  await file.writeAsBytes(bytes, flush: true);
+  OpenFile.open('$path/$fileName');
+}
+

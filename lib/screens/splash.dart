@@ -13,7 +13,7 @@ class _SplashState extends State<Splash> {
 
   //a function to run after 8secs
 
-  void initState(){
+  /*void initState(){
     super.initState();
     Timer(
       Duration(
@@ -25,7 +25,7 @@ class _SplashState extends State<Splash> {
     }
     );
 
-  }
+  }*/
 
   Widget build(BuildContext context) {
     return Scaffold(

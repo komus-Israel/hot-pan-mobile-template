@@ -34,7 +34,7 @@ class _HotPanState extends State<HotPan> {
 
       },
       home: Scaffold(
-        body: Splash()
+        body: TabComponent()
       ),
       theme: ThemeData(
         primaryColor: Colors.white

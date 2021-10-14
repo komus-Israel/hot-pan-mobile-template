@@ -32,6 +32,17 @@ dependencies:
   get: ^4.3.8
   flutter_svg: ^0.18.1
   shape_of_view:
+  flutter_native_splash: ^0.2.8
+  path_provider:
+  syncfusion_flutter_pdf: ^18.4.47-beta
+  open_file: ^3.1.0
+
+
+flutter_native_splash:
+  color: "#1a1039"
+  image: assets/images/hot_logo.png
+  android: true
+  ios: true
 
 dev_dependencies:
   flutter_test:
