@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hot_pan/screens/profile.dart';
+import 'package:hot_pan/screens/transaction.dart';
 import '../routes/routes.dart';
 import '../screens/homepage.dart';
 import 'customClasses.dart';
@@ -29,8 +31,8 @@ class _TabComponentState extends State<TabComponent> with SingleTickerProviderSt
     TabRouteObject(tabName: 'Cart', tabPage: FoodCart(), tabIcon: Icon(
       Icons.shopping_cart_sharp
     )),
-    TabRouteObject(tabName: 'Profile', tabPage: FoodProducts(), tabIcon: Icon(
-      Icons.person
+    TabRouteObject(tabName: 'Transactions', tabPage: TransactionLog(), tabIcon: Icon(
+      Icons.monetization_on_outlined
     ))
 
   ];

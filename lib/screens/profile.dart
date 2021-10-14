@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import '../routes/routes.dart';
 import 'transaction_receipt.dart';
+import '../components/customClasses.dart';
 
 
 class AccountPage extends StatefulWidget {
@@ -178,6 +179,7 @@ class _AccountPageState extends State<AccountPage> {
                                       ),
 
                                       TextButton(
+                                        onPressed: ()=>namedPageRoute(context, '/log', {}),
                                         child: Text(
                                             'View All',
                                           style: TextStyle(
@@ -212,44 +214,7 @@ class _AccountPageState extends State<AccountPage> {
                                                 elevation: MaterialStateProperty.resolveWith((states) => 0),
                                                 backgroundColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
                                               ),
-                                              child: Row(
-                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    transactions[index]['foodPurchased'].length > 5 ? transactions[index]['foodPurchased'].substring(0,6) + ' ...' : transactions[index]['foodPurchased'],
-                                                    style: TextStyle(
-                                                      fontWeight: FontWeight.bold,
-                                                      fontSize: 15,
-                                                      color: Colors.white,
-                                                    ),
-                                                  ),
-                                                  Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                    children: [
-                                                      Text(
-                                                          'Reference Number',
-                                                        style: TextStyle(
-                                                          color: Colors.grey
-                                                        ),
-                                                      ),
-                                                      Text(
-                                                          transactions[index]['ref'],
-                                                        style: TextStyle(
-                                                          color: Colors.grey
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Text(
-                                                      'N '+ transactions[index]['amount'],
-                                                    style: TextStyle(
-                                                      color: Colors.amber[200],
-                                                      fontStyle: FontStyle.italic
-                                                    ),
-                                                  ),
-                                                ],
-                                              )
+                                              child: transactionLog(context, transactions[index])
                                           ),
                                       ),
                                     ),

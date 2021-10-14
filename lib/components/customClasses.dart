@@ -319,3 +319,43 @@ Future<void> saveAndLaunchFile(List<int> bytes, String fileName) async{
   OpenFile.open('$path/$fileName');
 }*/
 
+Widget transactionLog(BuildContext context, Map log){
+  return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              log['foodPurchased'].length > 5 ? log['foodPurchased'].substring(0,6) + ' ...' : log['foodPurchased'],
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+                color: Colors.white,
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                    'Reference Number',
+                  style: TextStyle(
+                    color: Colors.grey
+                  ),
+                ),
+                Text(
+                    log['ref'],
+                  style: TextStyle(
+                    color: Colors.grey
+                  ),
+                ),
+              ],
+            ),
+            Text(
+                'N '+ log['amount'],
+              style: TextStyle(
+                color: Colors.amber[200],
+                fontStyle: FontStyle.italic
+              ),
+            ),
+          ],
+        );
+}

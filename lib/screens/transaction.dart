@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../components/customClasses.dart';
+import 'transaction_receipt.dart';
 
 
 class TransactionLog extends StatefulWidget {
@@ -50,27 +52,40 @@ class _TransactionLogState extends State<TransactionLog> {
         )*/
       child:Scaffold(
         body: Container(
+          color: Color.fromRGBO(35, 24, 75, 1.0),
             height: MediaQuery.of(context).size.height,
-            child: ListView.builder(
-              itemCount: transactions.length,
-              itemBuilder: (context, index){
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(transactions[index]['foodPurchased'].length > 5 ? transactions[index]['foodPurchased'].substring(0,6) + ' ...' : transactions[index]['foodPurchased']),
-                    
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Reference'),
-                        Text(transactions[index]['ref']),
-                      ],
+            child: Container(
+              color: Colors.white10,
+              child: Container(
+                margin: EdgeInsets.all(10),
+                child: ListView.builder(
+                  itemCount: transactions.length,
+                  itemBuilder: (context, index){
+                    return Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(width: 0.5),
+                          top: BorderSide.none,
+                          left: BorderSide.none,
+                          right: BorderSide.none
+                          )
                       ),
-                      Text(transactions[index]['amount']),
-                  ],
-                  );
-              }
-                  ),
+                      child: ElevatedButton(
+                      onPressed: ()=>showDialog(
+                            context:context,
+                            builder:(context)=>TransactionReceipt()), 
+                      child: transactionLog(context, transactions[index]),
+                      style: ButtonStyle(
+                        elevation: MaterialStateProperty.resolveWith((states) => 0),
+                        backgroundColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
+                
+                      ),
+                      ),
+                    );
+                  }
+                      ),
+              ),
+            ),
               )
         ),
     );
